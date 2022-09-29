@@ -3,52 +3,94 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Daily News</title>
+    <title>Bootstrap demo</title>
+    <!-- font awesome cdn link -->
+    <script src="https://kit.fontawesome.com/0bff4f04d9.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container">
+    <main class="container">
+      <!-- header start -->
       <header>
         <div class="border-bottom">
           <nav class="navbar bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand fs-2 fw-bold text-danger" href="#">The Daily <span class="text-primary fs-2 fw-bold">News</span></a>
+              <a class="navbar-brand text-danger fs-2 fw-semibold" href="#">The Daily <span class="text-primary fs-2 fw-semibold">News</span></a>
               <div class="d-flex">
-                <a class="nav-link active mx-3 my-0 fw-bold fs-5" aria-current="page" href="#">News</a>
-                <a class="nav-link mx-3 my-0 fw-bold fs-5" href="blog.html">Blog</a>
+                <a class="nav-link active mx-3 my-0 fw-bold fs-5 " aria-current="page" href="#">News</a>
+                <a class="nav-link mx-3 my-0 fw-bold fs-5" href="blog-question.html">Blog</a>
               </div>
             </div>
           </nav>
         </div>
-        
-        <nav class="navbar navbar-expand-lg bg-light">
+        <!-- category name  -->
+        <section
+          class="container  shadow-lg p-3 mb-5 my-3 bg-white bg-opacity-75  w-100 m-auto   rounded">
+          <p class="px-3  py-2 fw-bold">
+  
+            <span id="items-count" class="fs-5">0</span> Items found for category <span id="items-name"
+              class="fs-5"></span>
+            <p id="no-data" class="d-none" class="fs-5">No data found</p>
+          </p>
+        </section>
+        <!--  -->
+        <nav class="navbar  navbar-expand-lg bg-light">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-              <ul id="category_container" class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul id="container" class="navbar-nav me-auto mb-2 mb-lg-0">
               </ul>
             </div>
           </div>
         </nav>
+        <!-- catagory-section starts here -->
+        <section>
+          <div id="category-container">
 
+          </div>
+        </section>
+        <!-- catagory-section ends here -->
+        <!-- header end  -->
+      </header>
 
-
-      </header>    
-      
-      
-
-
-    </div>
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      <section id="card-container">
+  
+      </section>
+  
+      <!-- loader -->
+      <section id="loader-container" class="my-5 d-none">
+  
+        <div class="d-flex justify-content-center text-success">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+      <!-- Button trigger modal -->
+      <!-- Modal -->
+      <div class="modal fade" id="modal-container" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-Title"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-bdy">
+  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="js/news.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
 </html>
