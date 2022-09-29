@@ -16,12 +16,9 @@ const getCategoryName = async (id) => {
       const categoryDiv = document.createElement("div");
       categoryContainer.classList.add("d-flex","justify-content-lg-between", "mb-5","fs-5", "fw-semibold");
       categoryDiv.innerHTML = `
-           
               <li class="nav-item mx-3 list-style">
                 <a onclick="loadNewsByCategory('${category_id}')" class="nav-link active " aria-current="page" href="#">${category_name}</a>
               </li>
-           
-           
            `;
       categoryContainer.appendChild(categoryDiv);
     });
@@ -109,22 +106,15 @@ const getCategoryName = async (id) => {
     modalBody.innerHTML = `
       <img class="img-fluid" src="${news.image_url}" alt="">
         <p>${news.details ? news.details : "details not found"}</p>
-      
         <div class="col-md-8  d-flex">
         <img src="${
-          news.author.img
-        }" class="img-fluid author-custom h- rounded-circle" alt="...">
-      <b class="card-title m-4">${
-          news.author.name ? news.author.name : "name found!"
-        }</b>
-      
+          news.author.img}" class="img-fluid author-custom h- rounded-circle" alt="...">
+        <b class="card-title m-4">${
+          news.author.name ? news.author.name : "name found!"}</b>
         <p class="m-4"><i class="fa-solid fa-eye"></i></p>
-      <p class="card-text m-4">${
-        news.total_view ? news.total_view : "Rating not fund"
-      }</p>
-      
+        <p class="card-text m-4">${
+        news.total_view ? news.total_view : "Rating not fund"}</p>
       </div>
-  
   `;
   };
   
