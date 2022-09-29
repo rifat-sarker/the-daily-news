@@ -16,9 +16,9 @@ const getCategoryName = async (id) => {
     categories.forEach((category) => {
       const { category_id, category_name } = category;
       const categoryDiv = document.createElement("div");
-      categoryContainer.classList.add("d-flex", "justify-content-lg-between", "mb-5");
+      categoryContainer.classList.add("d-flex","justify-content-lg-between", "mb-5","fs-5", "fw-semibold");
       categoryDiv.innerHTML = `
-           <div class="">
+           <div class="category-container">
               <li class="nav-item mx-3 list-style">
                 <a onclick="loadNewsByCategory('${category_id}')" class="nav-link active" aria-current="page" href="#">${category_name}</a>
               </li>
@@ -30,7 +30,7 @@ const getCategoryName = async (id) => {
   
   };
   
-  // start loader
+  
   const loadNewsByCategory = async (category_id) => {
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
   
@@ -51,7 +51,7 @@ const getCategoryName = async (id) => {
     const noData = document.getElementById("items-count");
     const number = users.length;
     noData.innerText = `${
-      number <= 0 ? "No data found" : number + "items Found"
+      number <= 0 ? "No data found" : number+ "items Found"
     }`;
     for (const user of users) {
       console.log(user);
@@ -67,46 +67,41 @@ const getCategoryName = async (id) => {
           <div class="col-md-4" >
             <img src="${user.thumbnail_url}" class="w-100 " >
           </div>
-      <div class="col-md-8">
+          <div class="col-md-8">
             <div class="card-body">
-              <h3 class="card-title mb-3">${
-                user.title ? user.title : "tile not found"
-              }</h3>
+              <h3 class="card-title mb-5">${
+                user.title ? user.title : "tile not found"}
+              </h3>
               <p class="card-text"><small class="text-muted">${user.details.slice(
                 0,
-                500
-              )} <a href="#">See More...</a></small></p>
-             
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-md-8 mt-5  d-flex">
-              <img src="${
-                user.author.img
-              }" class="img-fluid author-custom h- rounded-circle" alt="...">
-            <b class="card-title m-2">${
-              user.author.name ? user.author.name : "Author name not found"
-            }</b>
-            
-              <p class="m-2"><i class="fa-solid fa-eye"></i></p>
-            <p class="card-text m-2"> ${
-              user.total_view ? user.total_view : "No data ableable"
-            } </p>
-            </div>
-            <div class="col ">
+                500)} 
+                <a href="#">See More...</a></small></p>  
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-md-8 mt-5 d-flex">
+                <img src="${
+                  user.author.img
+                }" class="img-fluid author-custom h- rounded-circle" alt="...">
+              <b class="card-title m-2">${
+                user.author.name ? user.author.name : "Author name not found"
+              }</b>
               
-            </div>
-            <div class="col m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <i class="fa-solid fa-arrow-right"></i></div>
-          </div>
-        </div>
-          </div>
-          </div>
-          
-          
-          `;
+                <p class="m-2"><i class="fa-solid fa-eye"></i></p>
+              <p class="card-text m-2"> ${
+                user.total_view ? user.total_view : "No data ableable"
+              } </p>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              
+              
+              `;
   
       cardContainer.appendChild(cardDiv);
     }
-    // stop loader
+    
     toggleLoader(false);
   };
   
