@@ -1,6 +1,5 @@
 const getCategoryName = async (id) => {
     const url = "https://openapi.programming-hero.com/api/news/categories";
-  
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -12,7 +11,6 @@ const getCategoryName = async (id) => {
   
   const displayAllCategory = (categories) => { 
     const categoryContainer = document.getElementById("category-container");
-  
     categories.forEach((category) => {
       const { category_id, category_name } = category;
       const categoryDiv = document.createElement("div");
@@ -29,7 +27,6 @@ const getCategoryName = async (id) => {
     });
   
   };
-  
   
   const loadNewsByCategory = async (category_id) => {
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
@@ -60,10 +57,7 @@ const getCategoryName = async (id) => {
       cardDiv.classList.add("mb-3");
       cardDiv.innerHTML = `
           
-    <div class="row g-0  author-align " onclick="loadPost('${
-            user._id
-          }')" data-bs-toggle="modal" data-bs-target="#modal-container" >
-          
+    <div class="row g-0 author-align" onclick="loadPost('${user._id}')" data-bs-toggle="modal" data-bs-target="#modal-container">
           <div class="col-md-4" >
             <img src="${user.thumbnail_url}" class="w-100 " >
           </div>
@@ -72,42 +66,32 @@ const getCategoryName = async (id) => {
               <h3 class="card-title mb-5">${
                 user.title ? user.title : "tile not found"}
               </h3>
-              <p class="card-text"><small class="text-muted">${user.details.slice(
-                0,
-                500)} 
-                <a href="#">See More...</a></small></p>  
+              <p class="card-text"><small class="text-muted">${user.details.slice(0,500)} 
+              <a href="#">See More...</a></small></p>  
           <div class="container text-center">
             <div class="row">
               <div class="col-md-8 mt-5 d-flex">
-                <img src="${
-                  user.author.img
-                }" class="img-fluid author-custom h- rounded-circle" alt="...">
+                <img src="${user.author.img}" class="img-fluid author-custom h- rounded-circle" alt="...">
               <b class="card-title m-2">${
-                user.author.name ? user.author.name : "Author name not found"
-              }</b>
-              
+                user.author.name ? user.author.name : "Author name not found"}</b>
                 <p class="m-2"><i class="fa-solid fa-eye"></i></p>
-              <p class="card-text m-2"> ${
-                user.total_view ? user.total_view : "No data ableable"
-              } </p>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
+                <p class="card-text m-2"> ${user.total_view ? user.total_view : "No data ableable"} </p>
+                   </div>
+                  </div>
+                </div>
+               </div>
+            </div>
               
               
               `;
   
       cardContainer.appendChild(cardDiv);
     }
-    
     toggleLoader(false);
   };
   
   const loadPost = async (id) => {
     const url = ` https://openapi.programming-hero.com/api/news/${id}`;
-  
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -154,6 +138,5 @@ const getCategoryName = async (id) => {
   };
   
   loadNewsByCategory("01");
-  
   getCategoryName();
   

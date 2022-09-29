@@ -11,24 +11,17 @@
     width: 100%;
     padding: 15px;
 }
-.logo-custom {
-    width: 150px;
-  }
-  
-  .news-active-color {
-    color: #5D5FEF;
-    border-bottom: 2px solid #5D5FEF;
-  }
-  .list-style{
+
+.list-style{
     list-style-type: none;
-  }
-  .author-custom {
+}
+.author-custom {
     width: 60px;
-  }
+}
   
-  .author-align {
+.author-align {
     align-items: center;
     justify-content: center;
-  }
+}
   
  
