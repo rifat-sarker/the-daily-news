@@ -9,18 +9,18 @@ const getCategoryName = async (id) => {
     }
   };
   
-  const displayAllCategory = (categories) => { 
+    const displayAllCategory = (categories) => { 
     const categoryContainer = document.getElementById("category-container");
     categories.forEach((category) => {
       const { category_id, category_name } = category;
       const categoryDiv = document.createElement("div");
       categoryContainer.classList.add("d-flex","justify-content-lg-between", "mb-5","fs-5", "fw-semibold");
       categoryDiv.innerHTML = `
-           <div class="category-container">
+           
               <li class="nav-item mx-3 list-style">
                 <a onclick="loadNewsByCategory('${category_id}')" class="nav-link active " aria-current="page" href="#">${category_name}</a>
               </li>
-           </div>
+           
            
            `;
       categoryContainer.appendChild(categoryDiv);
