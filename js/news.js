@@ -79,7 +79,6 @@ const getCategoryName = async (id) => {
                </div>
             </div>
               
-              
               `;
   
       cardContainer.appendChild(cardDiv);
@@ -87,7 +86,7 @@ const getCategoryName = async (id) => {
     toggleLoader(false);
   };
   
-  const loadPost = async (id) => {
+    const loadPost = async (id) => {
     const url = ` https://openapi.programming-hero.com/api/news/${id}`;
     try {
       const res = await fetch(url);
@@ -100,7 +99,6 @@ const getCategoryName = async (id) => {
   
   const displayNewsModal = (news) => {
     const modalTitle = document.getElementById("modal-Title");
-  
     modalTitle.innerText = `${news.title ? news.title : "title not found"}`;
     const modalBody = document.getElementById("modal-bdy");
     modalBody.innerHTML = `
