@@ -18,7 +18,7 @@ const getCategoryName = async (id) => {
       categoryDiv.innerHTML = `
            <div class="category-container">
               <li class="nav-item mx-3 list-style">
-                <a onclick="loadNewsByCategory('${category_id}')" class="nav-link active" aria-current="page" href="#">${category_name}</a>
+                <a onclick="loadNewsByCategory('${category_id}')" class="nav-link active " aria-current="page" href="#">${category_name}</a>
               </li>
            </div>
            
